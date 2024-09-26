@@ -1,0 +1,66 @@
+/* Animate background gradient */
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    animation: bgColorShift 5s infinite alternate; /* Background color animation */
+}
+
+/* Keyframes for background color animation */
+@keyframes bgColorShift {
+    0% {
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    }
+    100% {
+        background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    }
+}
+
+.clock-box {
+    width: 350px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Animate the time with a pulse effect */
+.clock-time {
+    font-family: 'Orbitron', sans-serif; /* Custom digital font */
+    font-size: 4rem;
+    color: #fff;
+    animation: pulse 1.5s infinite ease-in-out; /* Pulse animation */
+}
+
+/* Keyframes for pulse effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Slightly enlarge the text */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Optional: Add a flip effect for the time */
+@keyframes flip {
+    0% {
+        transform: rotateX(0);
+    }
+    50% {
+        transform: rotateX(90deg); /* Mid-flip */
+    }
+    100% {
+        transform: rotateX(0);
+    }
+}
+
+/* To apply the flip animation to the clock, uncomment the line below: */
+/* .clock-time { animation: flip 1s ease-in-out infinite; } */
